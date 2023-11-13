@@ -1,0 +1,145 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 150px;
+  background: linear-gradient(to right,#9a1d86, #1595be);
+  font-family: Arial, Helvetica, sans-serif;
+  user-select: none;
+}
+
+button {
+  background: rgb(175, 158, 5);
+	color: white;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid gray;
+	cursor: pointer;
+	transition: 200ms;
+  width: 100px;
+  font-size: 24px;
+}
+
+button:hover {
+  background: rgb(221, 202, 31);
+} 
+
+.over {
+  background: rgb(150, 150, 150);
+  padding: 50px 20px;
+  text-align: center;
+  position: fixed;
+  top: -230px;
+  transition: 700ms;
+  border-radius: 16px;
+}
+.over h1 {
+  font-family: 'Righteous', cursive;
+  position: relative;
+  color: #050505; 
+  display: inline-block;
+  border-top: 2px solid;
+  border-bottom: 2px solid;
+  font-size: 3em;
+  padding: 11px 60px;
+  margin: 0; 
+  line-height: 1;
+}
+.over h1:before, .over h1:after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  width: 30px;
+  height: 100%;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  background: repeating-linear-gradient(180deg, transparent, transparent 2px, #000000 2px, #000000 4px);
+}
+.over h1:before {left: 0;}
+.over h1:after {right: 0;}
+@media (max-width: 420px) {
+  .over h1 {font-size: 2em;}
+}
+
+.game_over {
+  top: 30vh;
+
+}
+
+.score {
+  font-size: 30px;
+  padding: 20px;
+  background: gray;
+  border-radius: 15px;
+  border: 1px solid #FFF;
+  margin: 0 0 10px 0;
+  width: 250px;
+}
+
+.gameboard {
+  display: grid;
+  padding: 0.6vh;
+  gap: 0.3vh;
+  border-radius: 0.6vh;
+  background-color: rgba(64, 64, 64, 0.5);
+}
+
+.gameboard > div {
+  --cell-size: min(4.5vh, 7.5vw);
+  height: var(--cell-size);
+  width: var(--cell-size);
+  border-radius: 0.3vh;
+  background-color: rgba(173, 173, 182, 0.2);
+}
+
+.gameboard > div.ghost {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.gameboard > div.I {
+  background-color: #6be1ec;
+}
+
+.gameboard > div.J {
+  background-color: #5eb0f3;
+}
+
+.gameboard > div.L {
+  background-color: #f2c35b;
+}
+
+.gameboard > div.O {
+  background-color: #f7e562;
+}
+
+.gameboard > div.S {
+  background-color: #7be17b;
+}
+
+.gameboard > div.Z {
+  background-color: #de5c6b;
+}
+
+.gameboard > div.T {
+  background-color: #b276f3;
+}
+
+.gameboard > div.I,
+.gameboard > div.J,
+.gameboard > div.L,
+.gameboard > div.O,
+.gameboard > div.S,
+.gameboard > div.T,
+.gameboard > div.Z,
+.gameboard > div.ghost {
+  box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 2px rgba(1, 8, 89, 0.2);
+}
